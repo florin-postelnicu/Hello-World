@@ -20,7 +20,7 @@ def conversion(degree, temp):
         print("There is no such type of degree: ", degree)
 
 
-print('Imput the type ')
+print('Input the type ')
 deg = input("Enter c for Celsius, or f for Fahrenheit:  ")
 
 temperature = int(input("Enter the value for temperature: "))
