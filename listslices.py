@@ -4,7 +4,7 @@ keywords : slice, delete, clone a list
 
 Exs:
 1. Write a Python program to sum all the items in a list
-2. Write a Python program to multiplies all the items in a list
+2. Write a Python program to multiply all the items in a list
 3. Write a Python program to count the number of strings where the string length is 2 or more
 and the first and last character are same from a given list of strings.
 Sample List : ['abc', 'xyz', 'aba', '1221']
