@@ -8,3 +8,5 @@ resources:
 for-loop                  https://www.python-course.eu/python3_for_loop.php,
 
 formatted output          https://www.python-course.eu/python3_formatted_output.php
+
+while - loop              https://www.python-course.eu/python3_loops.php
