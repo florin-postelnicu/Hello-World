@@ -3,6 +3,13 @@ Resources :
 
 https://www.python-course.eu/python3_loops.php
 
+Swap two variables  using a temporary variable:
+
+given x, y
+Create temp = x
+Reassign :
+x = y ( The value of var x is now the value of y)
+y = temp ( The value in var y is temp, which is the former value in x, before reassignment)
 
 
 
