@@ -65,4 +65,4 @@ while cont =='c':
     x = y
     y = temp + y
 
-    cont = input('if continuu press c, else press any other key')
+    cont = input('if continue press c, else press any other key')
