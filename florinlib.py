@@ -51,22 +51,21 @@ print(elimi_repeat(word))
 def element_and_index(alist):
     tuplist =[]
     for ind , value in enumerate(alist):
-        print(ind, value)
+       
         tuplist.append((value, ind))
     new = elimi_repeat(alist)
+    listoflists = []
     for let in new:
         u =[let]
         for pair in tuplist:
             if let == pair[0]:
                 u.append(pair[1])
-        print(u)
-
-
-    return tuplist
+        listoflists.append(u)
 
 
 
-#
-element_and_index(word)
+    return listoflists
+
+
 
 print(element_and_index(word))
