@@ -46,3 +46,27 @@ print(elimi_repeat(word))
 
 # create a function to diplay the indexes where a certain letter is a alist
 # if a letter appears multiple times, than the letter is followed by the list of indexes
+
+
+def element_and_index(alist):
+    tuplist =[]
+    for ind , value in enumerate(alist):
+        print(ind, value)
+        tuplist.append((value, ind))
+    new = elimi_repeat(alist)
+    for let in new:
+        u =[let]
+        for pair in tuplist:
+            if let == pair[0]:
+                u.append(pair[1])
+        print(u)
+
+
+    return tuplist
+
+
+
+#
+element_and_index(word)
+
+print(element_and_index(word))
