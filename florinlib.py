@@ -28,12 +28,12 @@ word = list("whateveryouwant")
 print(word)
 
 # create a function to eliminate the repeating letters
-# and keep only the first one of them, inn order of its apparition
+# and keep only the first one of them, in order of its apparition
 
 
 def eliminate_repeats(alist):
     # create a new list that contains only one of the repeating letters,
-    # in order of its apparotion
+    # in order of its apparition
 
     new = []
     for let in alist:
@@ -45,7 +45,7 @@ def eliminate_repeats(alist):
 
 print(eliminate_repeats(word))
 
-# create a function to diplay the indexes where a certain letter is a alist
+# create a function to diplay the indexes where a certain letter is in  a alist
 # if a letter appears multiple times, than the letter is followed by the list of indexes
 
 
