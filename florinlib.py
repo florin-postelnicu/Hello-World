@@ -28,9 +28,10 @@ word = list("whateveryouwant")
 print(word)
 
 # create a function to eliminate the repeating letters
-# and keep only the first one of them, in order of its apparition
+# and keep only the first one of them, inn order of its apparition
 
-def elimi_repeat(alist):
+
+def eliminate_repeats(alist):
     # create a new list that contains only one of the repeating letters,
     # in order of its apparotion
 
@@ -42,19 +43,18 @@ def elimi_repeat(alist):
     return new
 
 
-print(elimi_repeat(word))
+print(eliminate_repeats(word))
 
-# create a function to dsiplay the indexes where a certain letter is in a alist.
-# If a letter appears multiple times, than the letter is followed by the list of indexes
-# of all its positions 
+# create a function to diplay the indexes where a certain letter is a alist
+# if a letter appears multiple times, than the letter is followed by the list of indexes
 
 
 def element_and_index(alist):
     tuplist =[]
     for ind , value in enumerate(alist):
-       
+
         tuplist.append((value, ind))
-    new = elimi_repeat(alist)
+    new = eliminate_repeats(alist)
     listoflists = []
     for let in new:
         u =[let]
@@ -62,11 +62,10 @@ def element_and_index(alist):
             if let == pair[0]:
                 u.append(pair[1])
         listoflists.append(u)
-
-
-
     return listoflists
 
 
+for ind, val in enumerate(element_and_index(word)):
 
-print(element_and_index(word))
+    print (val)
+
