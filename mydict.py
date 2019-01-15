@@ -9,9 +9,9 @@ Data Structure :https://docs.python.org/3/tutorial/datastructures.html
 
 dict = {'Name': 'Nameless One', 'Strength': 'Very powerful skills' , 'Class' : 'warrior'}
 
-print("dict['Name']", dict['Name'])
-print(dict.keys())
-print(dict.values())
+# print("dict['Name']", dict['Name'])
+# print(dict.keys())
+# print(dict.values())
 
 # Translate a text using a dictionary
 
@@ -19,7 +19,7 @@ text = "This is a simple text to check whether the Name as a character" \
        " having good Strength could be replacing a Class fighter"
 print (text)
 text_list = text.split(' ')
-print( text_list)
+# print( text_list)
 for i in range(len( text_list)):
     for key in dict.keys():
         if text_list[i] == key:
