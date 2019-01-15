@@ -1,4 +1,11 @@
-
+'''
+Objective:
+Using a dictionary dict translate a text into a new_text
+Need to be familiar with:
+Data Structure :https://docs.python.org/3/tutorial/datastructures.html
+                5.1 lists
+                5.5  dictionary
+'''
 
 dict = {'Name': 'Nameless One', 'Strength': 'Very powerful skills' , 'Class' : 'warrior'}
 
