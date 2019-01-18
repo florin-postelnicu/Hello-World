@@ -69,3 +69,23 @@ for ind, val in enumerate(element_and_index(word)):
 
     print (val)
 
+# translate a text when a dictionary is given
+# the translat_text function has two parameters,
+# the text, and the dictionary,
+# and it returns the translated text as a new_text
+
+
+def translate_text(text, mydict):
+    list_text = text.split(' ')
+    for i in range(len(list_text)):
+        for key in mydict.keys():
+            if list_text[i] == key:
+                list_text.remove(list_text[i])
+                list_text.insert(i, mydict[key])
+    new_text = ''
+    for word in  list_text:
+        new_text = new_text + ' ' + word
+    return new_text
+
+
+print(translate_text(text1, dict1))
