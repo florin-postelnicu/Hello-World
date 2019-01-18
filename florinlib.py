@@ -76,16 +76,16 @@ for ind, val in enumerate(element_and_index(word)):
 
 
 def translate_text(text, mydict):
-    list_text = text.split(' ')
+    list_text = text.split()
     for i in range(len(list_text)):
         for key in mydict.keys():
             if list_text[i] == key:
                 list_text.remove(list_text[i])
                 list_text.insert(i, mydict[key])
-    new_text = ''
-    for word in  list_text:
-        new_text = new_text + ' ' + word
-    return new_text
+#     new_text = ''
+#     for word in  list_text:
+#         new_text = new_text + ' ' + word
+    return ' '.join(new_text)
 
 
 print(translate_text(text1, dict1))
