@@ -1,9 +1,9 @@
 
 word = 'hangman'
 secret_word = list(word)
-guess_word = []
-for i in range(len(secret_word)):
-    guess_word.append('*')
+guess_word = ['*' for i in range(len(secret_word))]
+# for i in range(len(secret_word)):
+#     guess_word.append('*')
 
 
 penalty = 0
