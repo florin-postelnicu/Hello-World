@@ -1,6 +1,6 @@
 
 import random
-# from storytext import text
+from hangman_list import text_w
 
 
 def gallows(penal):
@@ -109,10 +109,12 @@ def gallows(penal):
 
         return draw
 
-# word = text[random.randint(len(text))]
+# print(text_w)
+number = random.randint(0, len(text_w))
+word = text_w[number]
+# print(word, len(text_w))
 
 
-word = 'hangman'
 secret_word = list(word)
 guess_word = ['*' for i in range(len(secret_word))]
 
