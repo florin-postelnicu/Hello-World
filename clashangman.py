@@ -21,7 +21,7 @@ class Player:
         else :
 
             # No call the Setters
-            Player.set_waorrior_infos(self)
+            Player.set_warrior_infos(self)
             history[self.name] = (self.battles, self.victories)
             Player.print_stats(self)
         print(history)
@@ -34,7 +34,7 @@ class Player:
         pass
 
     # Define Setters For newbies
-    def set_waorrior_infos(self):
+    def set_warrior_infos(self):
         print("What's your story {}  warrior? \n".format(self.name))
         self.battles = int(input("Enter your skirmishes big warrior \n"))
         self.victories = int(input("Enter the number of annihilated enemies \n"))
@@ -52,7 +52,7 @@ Player.greetings(Player)
 # player1 = Player("Moody", 35, 12)
 # Player.print_stats(player1)
 # p2 = Player
-# Player.set_waorrior_infos(p2)
+# Player.set_warrior_infos(p2)
 # Player.print_stats(p2)
 
 
