@@ -9,7 +9,7 @@ class Player:
         self.victories = victories
 
     def greetings(self):
-
+        # self.get_warrior_infos()
         history = Player.get_warrior_infos(self)
 
         #  Check if the name is in the history.names
@@ -19,7 +19,8 @@ class Player:
             self.battles = history[self.name][0]
             self.victories = history[self.name][1]
             Player.print_stats(self)
-            # self.get_warrior_infos()
+            Player.update_warrior(self)
+
         else :
 
             # No call the Setters
@@ -55,16 +56,31 @@ class Player:
         print("Warrior ", self.name)
         print("Lots of battles ", self.battles)
         print("Lots of winning scars ", self.victories)
-    def all_warriors(self):
-        pass
+
+
+    def update_warrior(self):
+        history = Player.get_warrior_infos(self)
+        if self.name in history.keys():
+            # Update battles
+            self.battles += 1
+            # Update victories
+            viky = input("{} warrior, Did you win ? y/n".format(self.name))
+            if viky == 'y' :
+                self.victories += 1
+            else:
+                self.victories += 0
+        history[self.name] = (self.battles, self.victories)
+        f1 = open('historydict,p', 'wb')
+        pickle.dump(history, f1)
+        f1.close()
+        Player.print_stats(self)
+
+    def print_all_warriors(self):
+        Player.update_warrior(Player)
+        history = Player.get_warrior_infos(self)
+        print(history)
 
 
 
-Player.greetings(Player)
-# player1 = Player("Moody", 35, 12)
-# Player.print_stats(player1)
-# p2 = Player
-# Player.set_warrior_infos(p2)
-# Player.print_stats(p2)
-
-
+Player.greetings((Player))
+Player.print_all_warriors(Player)
