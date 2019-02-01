@@ -1,6 +1,9 @@
 
+
+import pickle
+
 class Player:
-    def __init__(self, name , battles , victories  ):
+    def __init__(self, name , battles , victories):
         self.name = name
         self.battles = battles
         self.victories = victories
@@ -8,9 +11,13 @@ class Player:
     def greetings(self):
         self.name = input("Enter your name warrior! \n")
         print(self.name)
-        history = {'Archy': (10,3), 'Kareandru': (100, 75)}
+        f1 = open('historydict,p', 'rb')
+        history = pickle.load(f1)
+        f1.close()
+
         #  Check if the name is in the history.names
         # Use get_warrior_infos()
+
         if self.name in history.keys():
 
             # Yes call the Getters
@@ -23,6 +30,9 @@ class Player:
             # No call the Setters
             Player.set_warrior_infos(self)
             history[self.name] = (self.battles, self.victories)
+            f1 = open('historydict,p', 'wb')
+            pickle.dump(history, f1)
+            f1.close()
             Player.print_stats(self)
         print(history)
 
