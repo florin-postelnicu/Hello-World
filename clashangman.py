@@ -9,18 +9,13 @@ class Player:
         self.victories = victories
 
     def greetings(self):
-        self.name = input("Enter your name warrior! \n")
-        print(self.name)
-        f1 = open('historydict,p', 'rb')
-        history = pickle.load(f1)
-        f1.close()
+
+        history = Player.get_warrior_infos(self)
 
         #  Check if the name is in the history.names
         # Use get_warrior_infos()
 
         if self.name in history.keys():
-
-            # Yes call the Getters
             self.battles = history[self.name][0]
             self.victories = history[self.name][1]
             Player.print_stats(self)
@@ -29,19 +24,26 @@ class Player:
 
             # No call the Setters
             Player.set_warrior_infos(self)
-            history[self.name] = (self.battles, self.victories)
+            history[self.name] = (0,0)
             f1 = open('historydict,p', 'wb')
             pickle.dump(history, f1)
             f1.close()
             Player.print_stats(self)
-        print(history)
+            print("Sorry valiant warrior, but we don't believe in Fairy Tales, \n"
+                  " however,  \n we want you to prove yourself and get into"
+                  " our history book. Good Luck!")
+        print("History book : \n", history)
 
     # Define Getters
 
     def get_warrior_infos(self):
-        # Read the file "History", and check if the name of the player it is
-        # already in
-        pass
+        # Read the file "historydict", and return the dictionary history
+        self.name = input("Enter your name warrior! \n")
+        print(self.name)
+        f1 = open('historydict,p', 'rb')
+        history = pickle.load(f1)
+        f1.close()
+        return history
 
     # Define Setters For newbies
     def set_warrior_infos(self):
