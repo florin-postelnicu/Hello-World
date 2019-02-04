@@ -1,9 +1,10 @@
 '''
-To start for the first time the Hangman game one
-needs to create a starting file  historydict
+To start for the first time the Hangman game 
+one needs to create a starting 'memory' file  historydict,
 that should have at least one entry:
 history = {'Anonymous':(0,0)}
-These lines should be added to the beggining of the program clashangman:
+These lines should be added to the beggining of the program 
+containing the class Player (clashangman):
 f1 = open('historydict,p', 'wb')
 pickle.dump(history, f1)
 f1.close()
@@ -12,6 +13,8 @@ f1 = open('historydict,p', 'rb')
 history = picle.load(f1)
 f1.close()
 
+After the first run, thes lines could be erased, since the 'memory'
+has been created.
 '''
 
 import random
