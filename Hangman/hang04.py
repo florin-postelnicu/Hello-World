@@ -1,6 +1,29 @@
 '''
 import clashangman
+If playing first time the Hangman, the 'memory' file
+          historydict
+should be created.
 
+An initial dictionary
+
+history = {'Anonymous': (0,0)}
+
+has to be added to a file, such that
+ the pickling jar is created.
+ 
+You need to add the lines bellow to the program containing the class Player
+and run it once, such that the file historydict becomes a physical file
+(it is created).
+Afterwords, the lines could be ereased since the'memory' is set.
+
+history = {'Anonymous': (0,0)}
+f1 = open('historydict,p', 'wb')
+pickle.dump(history, f1)
+f1.close()
+
+f1 = open('historydict,p', 'rb')
+history = pickle.load(f1)
+f1.close()
 '''
 
 import random
