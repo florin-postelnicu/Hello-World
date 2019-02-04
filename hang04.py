@@ -1,5 +1,16 @@
 '''
-import clashangman
+To start for the first time the Hangman game one
+needs to create a starting file  historydict
+that should have at least one entry:
+history = {'Anonymous':(0,0)}
+These lines should be added to the beggining of the program clashangman:
+f1 = open('historydict,p', 'wb')
+pickle.dump(history, f1)
+f1.close()
+
+f1 = open('historydict,p', 'rb')
+history = picle.load(f1)
+f1.close()
 
 '''
 
