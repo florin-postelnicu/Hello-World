@@ -1,5 +1,4 @@
 
-
 import pickle
 
 class Player:
@@ -10,6 +9,8 @@ class Player:
 
     def greetings(self):
         # self.get_warrior_infos()
+        self.name = input("Enter your name warrior! \n")
+        print(self.name)
         history = Player.get_warrior_infos(self)
 
         #  Check if the name is in the history.names
@@ -19,7 +20,7 @@ class Player:
             self.battles = history[self.name][0]
             self.victories = history[self.name][1]
             Player.print_stats(self)
-            Player.update_warrior(self)
+            Player.update_warrior(self, vic=True)
 
         else :
 
@@ -39,8 +40,8 @@ class Player:
 
     def get_warrior_infos(self):
         # Read the file "historydict", and return the dictionary history
-        self.name = input("Enter your name warrior! \n")
-        print(self.name)
+        # self.name = input("Enter your name warrior! \n")
+        # print(self.name)
         f1 = open('historydict,p', 'rb')
         history = pickle.load(f1)
         f1.close()
@@ -58,14 +59,14 @@ class Player:
         print("Lots of winning scars ", self.victories)
 
 
-    def update_warrior(self):
+    def update_warrior(self, vic):
         history = Player.get_warrior_infos(self)
         if self.name in history.keys():
             # Update battles
             self.battles += 1
             # Update victories
-            viky = input("{} warrior, Did you win ? y/n".format(self.name))
-            if viky == 'y' :
+            # viky = input("{} warrior, Did you win ? y/n".format(self.name))
+            if vic :
                 self.victories += 1
             else:
                 self.victories += 0
@@ -75,12 +76,12 @@ class Player:
         f1.close()
         Player.print_stats(self)
 
-    def print_all_warriors(self):
-        Player.update_warrior(Player)
-        history = Player.get_warrior_infos(self)
-        print(history)
+    # def print_all_warriors(self):
+    #     Player.update_warrior(Player)
+    #     history = Player.get_warrior_infos(self)
+    #     print(history)
 
 
 
-Player.greetings((Player))
-Player.print_all_warriors(Player)
+# Player.greetings((Player))
+# Player.print_all_warriors(Player)
