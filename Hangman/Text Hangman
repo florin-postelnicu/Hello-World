@@ -1,0 +1,5 @@
+If you want to load the game , than follow these directions:
+load hangman_list.py # It contains the list of words used for a random selection
+     clashangman.py  # It contains class Player. Read the docu comment at the top of the program
+     class_gamehang.py # It contains the game itself like a class Game
+     gamehang.py       # It runs the game as an instance of class Game 
