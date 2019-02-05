@@ -95,7 +95,7 @@ class Game(object):
                   "      ====  \n"
         return gal
 
-    player1 = Player
+    player1 = Player()
     player1.greetings(player1)
     again = 'y'
     while again == 'y':
