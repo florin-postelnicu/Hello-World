@@ -24,7 +24,7 @@ f1.close()
 import pickle
 
 
-class Player:
+class Player(object):
     def __init__(self, name , battles , victories):
         self.name = name
         self.battles = battles
