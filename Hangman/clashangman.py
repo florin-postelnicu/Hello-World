@@ -1,6 +1,7 @@
 
 import pickle
 
+
 class Player:
     def __init__(self, name , battles , victories):
         self.name = name
@@ -19,10 +20,8 @@ class Player:
         if self.name in history.keys():
             self.battles = history[self.name][0]
             self.victories = history[self.name][1]
-            Player.print_stats(self)
-            Player.update_warrior(self, vic=True)
 
-        else :
+        else:
 
             # No, call the Setters
             Player.set_warrior_infos(self)
@@ -30,10 +29,13 @@ class Player:
             f1 = open('historydict,p', 'wb')
             pickle.dump(history, f1)
             f1.close()
-            Player.print_stats(self)
+
             print("Sorry valiant warrior, but we don't believe in Fairy Tales, \n"
                   " however,  \n we want you to prove yourself and get into"
                   " our history book. Good Luck!")
+            Player.update_warrior(self, vic=None)
+        Player.print_stats(self)
+
         print("History book : \n", history)
 
     # Define Getters
@@ -58,17 +60,20 @@ class Player:
         print("Lots of battles ", self.battles)
         print("Lots of winning scars ", self.victories)
 
-
     def update_warrior(self, vic):
         history = Player.get_warrior_infos(self)
-        if self.name in history.keys():
-            # Update battles
-            self.battles += 1
+        if self.name in history.keys() and vic is not None:
+
             # Update victories
             if vic :
                 self.victories += 1
+                # Update battles
+                self.battles += 1
             else:
                 self.victories += 0
+                # Update battles
+                self.battles += 1
+
         history[self.name] = (self.battles, self.victories)
         f1 = open('historydict,p', 'wb')
         pickle.dump(history, f1)
@@ -78,8 +83,3 @@ class Player:
     def print_all_warriors(self):
         history = Player.get_warrior_infos(self)
         print(history)
-
-
-
-# Player.greetings((Player))
-# Player.print_all_warriors(Player)
