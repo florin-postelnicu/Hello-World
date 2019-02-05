@@ -3,24 +3,19 @@ import clashangman
 If playing first time the Hangman, the 'memory' file
           historydict
 should be created.
-
 An initial dictionary
-
 history = {'Anonymous': (0,0)}
-
 has to be added to a file, such that
  the pickling jar is created.
- 
+
 You need to add the lines bellow to the program containing the class Player
 and run it once, such that the file historydict becomes a physical file
 (it is created).
 Afterwords, the lines could be ereased since the'memory' is set.
-
 history = {'Anonymous': (0,0)}
 f1 = open('historydict,p', 'wb')
 pickle.dump(history, f1)
 f1.close()
-
 f1 = open('historydict,p', 'rb')
 history = pickle.load(f1)
 f1.close()
@@ -32,7 +27,7 @@ from clashangman import Player
 
 
 def gallows(penal):
-    if penal == 0 :
+    if penal == 0:
         gal = "---------I \n" \
               "         I \n" \
               "         I \n" \
@@ -52,7 +47,7 @@ def gallows(penal):
               "        / \  \n" \
               "       /   \  \n" \
               "      ====  \n"
-    if penal ==2 :
+    if penal == 2:
         gal = "---------I \n" \
               "         I \n" \
               "         I \n" \
@@ -114,6 +109,8 @@ def gallows(penal):
               "       /   \  \n" \
               "      ====  \n"
     return gal
+
+
 player1 = Player
 player1.greetings(player1)
 again = 'y'
@@ -132,7 +129,7 @@ while again == 'y':
     letters_used = []
     while '*' in new_word and penalty < 7:
 
-        guess = input ('Enter a letter  \n')
+        guess = input('Enter a letter  \n')
         if guess not in secret_word or guess in letters_used:
             penalty += 1
         else:
@@ -141,7 +138,7 @@ while again == 'y':
                     new_word[i] = secret_word[i]
         letters_used.append(guess)
         print(letters_used)
-        print('penalty ', penalty) # Here will be placed the gallows call
+        print('penalty ', penalty)  # Here will be placed the gallows call
         print(gallows(penalty))
         print(new_word)
 
@@ -155,6 +152,5 @@ while again == 'y':
 
 print("Good by, See you again!")
 exit()
-
 
 
