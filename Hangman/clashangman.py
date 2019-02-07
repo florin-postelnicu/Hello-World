@@ -1,30 +1,8 @@
-'''
-If playing first time the Hangman, the 'memory' file
-          historydict
-should be created.
-An initial dictionary
-history = {'Anonymous': (0,0)}
-has to be added to a file, such that
- the pickling jar is created.
-
-You need to add the lines bellow to the program containing the class Player
-and run it once, such that the file historydict becomes a physical file
-(it is created).
-Afterwords, the lines could be ereased since the'memory' is set.
-history = {'Anonymous': (0,0)}
-f1 = open('historydict,p', 'wb')
-pickle.dump(history, f1)
-f1.close()
-f1 = open('historydict,p', 'rb')
-history = pickle.load(f1)
-f1.close()
-'''
-
 
 import pickle
 
 
-class Player(object):
+class Player:
     def __init__(self, name , battles , victories):
         self.name = name
         self.battles = battles
@@ -57,11 +35,11 @@ class Player(object):
                   " our history book. Good Luck!")
             Player.update_warrior(self, vic=None)
         Player.print_stats(self)
+        Player.print_all_warriors(self)
 
-        print("History book : \n", history)
+    # Define Getters 
 
-    # Define Getters
-
+    @staticmethod
     def get_warrior_infos(self):
         # Read the file "historydict", and return the dictionary history
         f1 = open('historydict,p', 'rb')
@@ -104,4 +82,4 @@ class Player(object):
 
     def print_all_warriors(self):
         history = Player.get_warrior_infos(self)
-        print(history)
+        print("History book : \n", history)
