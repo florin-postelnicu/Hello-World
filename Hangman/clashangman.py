@@ -12,18 +12,20 @@ class Player:
         # self.get_warrior_infos()
         self.name = input("Enter your name warrior! \n")
         print(self.name)
-        history = Player.get_warrior_infos(self)
-
-        #  Check if the name is in the history.names
+        
+       
         # Use get_warrior_infos()
 
+        history = Player.get_warrior_infos(self)
+        
+        #  Check if the name is in the history.names
         if self.name in history.keys():
             self.battles = history[self.name][0]
             self.victories = history[self.name][1]
 
         else:
 
-            # No, call the Setters
+            # otherwise, call the Setters
             Player.set_warrior_infos(self)
             history[self.name] = (0,0)
             f1 = open('historydict,p', 'wb')
